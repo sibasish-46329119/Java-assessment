@@ -1,0 +1,29 @@
+package com.assessment.increasingordernumber;
+import java.util.Scanner;
+
+public class IncreasingOrderNumber {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        boolean isIncreasing = checkIncreasingOrder(number);
+
+        System.out.println(isIncreasing);
+
+    }
+
+    private static boolean checkIncreasingOrder(int number) {
+        String numStr = String.valueOf(number);
+
+        for (int i = 0; i < numStr.length() - 1; i++) {
+            if (numStr.charAt(i) >= numStr.charAt(i + 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
